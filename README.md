@@ -1,8 +1,10 @@
-# React + Vite
+**Una app sui Post**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In questa semplice app ho voluto creare un elenco di post presi dalla API di jsonplacholder e fare in modo di filtrarli in base al valore dello user che li ha creati e mettere in evidenza anche i commenti relativi ai vari post.
 
-Currently, two official plugins are available:
+In questo caso ho usato Vite e React.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+L'esercizio è stato utile per capire in che modo ragionare con API diverse e con elementi legati tra loro da relazioni tabellari gestiti attraverso un backend.
+
+
+
