@@ -1,6 +1,7 @@
 import { React } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import './index.css';
 import './PostDetails.css';
 
@@ -80,6 +81,9 @@ function PostDetails(){
                         }
                     </ul>
                 </div>
+                <Link to="/" className="btn btn-back">
+                    <span>Indietro</span>
+                </Link>
             </div>
 
         </div>

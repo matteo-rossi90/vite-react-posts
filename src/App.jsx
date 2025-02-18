@@ -54,7 +54,7 @@ function App() {
                       <header className="post-header">
                         <small>{post.userId} ha pubblicato:</small>
                         <small className="btn-box">
-                          <Link to={`/post/${post.id}`} className="btn-link">
+                          <Link to={`/post/${post.id}`} className="btn btn-link">
                             <span>Visualizza</span>
                           </Link>
                         </small>
