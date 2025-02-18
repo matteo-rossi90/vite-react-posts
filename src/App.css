@@ -15,3 +15,12 @@ ul li{
   padding-left: none;
 }
 
+.post-card p,
+.post-card h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;
+}

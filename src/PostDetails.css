@@ -1,0 +1,33 @@
+.container{
+    padding: 1.5rem 0;
+}
+
+.comment-list{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.comment-line{
+    display:flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.box-avatar,
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar{
+    background-color: fuchsia;
+    color: white;
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+}
+

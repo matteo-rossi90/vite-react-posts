@@ -82,22 +82,13 @@ h1 {
   display: flex;
 }
 
-.post-card {
+.post-card,
+.post-details {
   width: 100%;
   background-color: rgb(53, 53, 53);
   border-radius: 10px;
   padding: 1rem;
   text-align: left;
-}
-
-.post-card p,
-.post-card h3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: 4.5em;
 }
 
 .btn-link {

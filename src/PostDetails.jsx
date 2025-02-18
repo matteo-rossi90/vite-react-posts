@@ -1,8 +1,8 @@
 import { React } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import './index.css'
-import './PostDetails.css'
+import './index.css';
+import './PostDetails.css';
 
 function PostDetails(){
 
@@ -14,13 +14,17 @@ function PostDetails(){
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
 
+    function strChar(str) {
+        return str[0].toUpperCase()
+    }
+
     useEffect(() => {
         const getPost = async () => {
             try {
                 const res = await fetch(`${postsUrl}/${id}`);
                 if (!res.ok) throw new Error("Errore nel recupero del post");
                 const data = await res.json();
-                console.log("Post trovato:", data); // Debug
+                console.log("Post trovato:", data); 
                 setPost(data);
             } catch (error) {
                 console.error(error);
@@ -35,7 +39,7 @@ function PostDetails(){
                 const res = await fetch(`${commentsUrl}?postId=${id}`);
                 if (!res.ok) throw new Error("Errore nel recupero dei commenti");
                 const data = await res.json();
-                console.log("Commenti trovati:", data); // Debug
+                console.log("Commenti trovati:", data); 
                 setComments(data);
             } catch (error) {
                 console.error(error);
@@ -45,29 +49,39 @@ function PostDetails(){
     }, [id]);
 
     return(
-        <div className="card-box">
-            <div className="post-card">
-                <h2>Dettagli di {post.title}</h2>
-                <p>{post.body}</p>
+        <div className="container">
+            <div className="card-box">
+                <div className="post-details">
+                    <h2>{post.title}</h2>
+                    <p>{post.body}</p>
+                </div>
+                <div className="post-details">
+                    <h2>Commenti:</h2>
+                    <ul className="comment-list">
+                        {comments.length > 0 ? (
+                            comments.map((comment) => (
+                                <li key={comment.id} className="comment-line">
+                                    <div className="box-avatar">
+                                        <div className="avatar">
+                                            <h2>{strChar(comment.name)}</h2>
+                                        </div>
+                                    </div>
+                                    <div className="comment">
+                                        <strong>
+                                            {comment.name} ha scritto:
+                                        </strong>
+                                        <p>{comment.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        ) : (
+                            <p>Ancora nessun commento</p>
+                        )
+                        }
+                    </ul>
+                </div>
             </div>
-            <div className="post-card">
-                <h2>Commenti:</h2>
-                <ul>
-                    {comments.length > 0 ? (
-                        comments.map((comment) => (
-                            <li key={comment.id} className="">
-                                <strong>
-                                    {comment.name}
-                                </strong>
-                                <p>{comment.body}</p>
-                            </li>
-                        ))
-                    ) : (
-                        <p>Ancora nessun commento</p>
-                    )
-                    }
-                </ul>
-            </div>
+
         </div>
     )
 }
