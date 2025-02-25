@@ -47,6 +47,29 @@ function App() {
       <div>
         <main>
           <h1>PostMania</h1>
+          <form action="#" class="form-container">
+            <div className="input-box">
+              <select name="posts" id="posts">
+                <option value="">Seleziona post</option>
+                {
+                  posts.map(p => <option value={p.id} key={p.id}>{p.title}</option>)
+                }
+                
+              </select>
+              <button class="search">Cerca</button>
+            </div>
+            <div className="input-box">
+              <select name="user" id="user">
+                <option value="">Seleziona utente</option>
+                {
+                  users.map(u => <option value={u.id} key={u.id}>{u.name}</option>)
+                }
+
+              </select>
+              <button class="search">Cerca</button>
+            </div>
+            
+          </form>
           <ul className="card-box">
               {
                 posts.map(post =>
